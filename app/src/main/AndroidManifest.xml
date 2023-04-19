@@ -9,10 +9,19 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DormDynamo"
+        android:theme="@style/DormDynamo"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".student.StudentDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".warden.WardenDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

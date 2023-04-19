@@ -14,5 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "DormDynamo"
 include ':app'
-include ':app:wardenlogin'
-include ':app:studentlogin'
