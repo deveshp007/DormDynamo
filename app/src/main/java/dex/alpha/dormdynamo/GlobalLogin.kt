@@ -1,26 +1,51 @@
 package dex.alpha.dormdynamo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
+import dex.alpha.dormdynamo.student.StudentDashboard
+import dex.alpha.dormdynamo.warden.WardenDashboard
 
 
 class GlobalLogin : AppCompatActivity() {
 
     private lateinit var imagePager: ViewPager2
     private lateinit var imageList: List<Int>
+    lateinit var btnExit: Button
+    lateinit var studentLoginBtn: CardView
+    lateinit var wardenLoginBtn: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_global_login)
+
+        btnExit = findViewById(R.id.exitButton)
+        btnExit.setOnClickListener(){
+            finish()
+        }
+
+        studentLoginBtn = findViewById(R.id.student_login_button)
+        studentLoginBtn.setOnClickListener(){
+            val intent = Intent(this, StudentDashboard::class.java)
+            startActivity(intent)
+        }
+
+        wardenLoginBtn = findViewById(R.id.warden_login_button)
+        wardenLoginBtn.setOnClickListener(){
+            val intent = Intent(this, WardenDashboard::class.java)
+            startActivity(intent)
+        }
 
         imagePager = findViewById(R.id.imagePager)
 
