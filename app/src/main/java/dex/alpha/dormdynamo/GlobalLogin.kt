@@ -1,6 +1,7 @@
 package dex.alpha.dormdynamo
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -13,7 +14,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
-import dex.alpha.dormdynamo.student.StudentDashboard
+import dex.alpha.dormdynamo.student.StudentLogin
+import dex.alpha.dormdynamo.student.StudentRegister
 import dex.alpha.dormdynamo.warden.WardenDashboard
 
 
@@ -22,6 +24,8 @@ class GlobalLogin : AppCompatActivity() {
     private lateinit var imagePager: ViewPager2
     private lateinit var imageList: List<Int>
     lateinit var btnExit: Button
+    lateinit var shareRepo: Button
+    lateinit var shareAppTxt: Button
     lateinit var studentLoginBtn: CardView
     lateinit var wardenLoginBtn: CardView
 
@@ -30,23 +34,54 @@ class GlobalLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_global_login)
 
+
+        // Exit Button Code
         btnExit = findViewById(R.id.exitButton)
         btnExit.setOnClickListener(){
             finish()
         }
 
+
+        // App repo button code
+        shareRepo = findViewById(R.id.shareRepo)
+        shareRepo.setOnClickListener(){
+            val url = "https://github.com/deveshp007/DormDynamo"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setDataAndType(Uri.parse(url), "text/plain")
+            val choose = Intent.createChooser(intent, "Share URL")
+            startActivity(choose)
+        }
+
+        // share app button code
+        shareAppTxt = findViewById(R.id.shareAppTxt)
+        shareAppTxt.setOnClickListener(){
+            val intent = Intent(Intent.ACTION_SEND)
+            val url = "https://github.com/deveshp007/DormDynamo/releases"
+            intent.type = "text/plain"
+            intent.putExtra(
+                Intent.EXTRA_TEXT,
+                "Hey, Checkout this Dorm Dynamo App. $url"
+            )
+            val chooser = Intent.createChooser(intent, "Share this app using...")
+            startActivity(chooser)
+        }
+
+        // student login
         studentLoginBtn = findViewById(R.id.student_login_button)
         studentLoginBtn.setOnClickListener(){
-            val intent = Intent(this, StudentDashboard::class.java)
+            val intent = Intent(this, StudentLogin::class.java)
             startActivity(intent)
         }
 
+        // warden login
         wardenLoginBtn = findViewById(R.id.warden_login_button)
         wardenLoginBtn.setOnClickListener(){
             val intent = Intent(this, WardenDashboard::class.java)
             startActivity(intent)
         }
 
+
+        // view Pager in card view
         imagePager = findViewById(R.id.imagePager)
 
         imageList = listOf(
