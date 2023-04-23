@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".warden.WardenDashboard">
+    tools:context=".student.StudentDashboard">
 
     <TextView
         android:id="@+id/warden_dashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Warden Dashboard"
+        android:text="Student Dashboard"
         android:textColor="?attr/colorOnSurface"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="@id/warden_dashboard" />
 
     <ImageView
-        android:id="@+id/logout_button_warden"
+        android:id="@+id/logout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -38,6 +38,8 @@
         app:layout_constraintBottom_toBottomOf="@id/warden_dashboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/warden_dashboard" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -19,6 +20,7 @@ class StudentLogin : AppCompatActivity(), View.OnClickListener {
     private lateinit var mPasswordEditText: EditText
     private lateinit var mLoginButton: Button
     private lateinit var tVRegister: TextView
+    lateinit var back_Btn: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +46,12 @@ class StudentLogin : AppCompatActivity(), View.OnClickListener {
         tVRegister.setOnClickListener(){
             val intent = Intent(this, StudentRegister::class.java)
             startActivity(intent)
+            finish()
+        }
+
+        back_Btn = findViewById(R.id.btnBack)
+        back_Btn.setOnClickListener(){
+            onBackPressed()
             finish()
         }
 

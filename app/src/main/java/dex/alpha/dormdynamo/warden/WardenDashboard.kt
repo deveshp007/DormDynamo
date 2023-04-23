@@ -6,11 +6,13 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import dex.alpha.dormdynamo.R
 
 class WardenDashboard : AppCompatActivity() {
 
-    lateinit var logoutBtn: Button
+    lateinit var logoutBtn: ImageView
+    private lateinit var back_Btn : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_warden_dashboard)
@@ -26,6 +28,13 @@ class WardenDashboard : AppCompatActivity() {
             // Launch the WardenLogin activity and finish the current activity
             val intent = Intent(this, WardenLogin::class.java)
             startActivity(intent)
+            finish()
+        }
+
+        // back button
+        back_Btn = findViewById(R.id.btnBack)
+        back_Btn.setOnClickListener(){
+            onBackPressed()
             finish()
         }
     }

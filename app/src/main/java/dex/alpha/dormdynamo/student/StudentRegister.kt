@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.UserProfileChangeRequest
@@ -24,6 +21,7 @@ class StudentRegister : AppCompatActivity() , View.OnClickListener{
     private lateinit var mRegistrationEditText: EditText
     private lateinit var mRegisterButton: Button
     private lateinit var tVLogin: TextView
+    private lateinit var back_Btn : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +39,13 @@ class StudentRegister : AppCompatActivity() , View.OnClickListener{
         tVLogin.setOnClickListener(){
             val intent = Intent(this, StudentLogin::class.java)
             startActivity(intent)
+            finish()
+        }
+
+        // back Button
+        back_Btn = findViewById(R.id.btnBack)
+        back_Btn.setOnClickListener(){
+            onBackPressed()
             finish()
         }
     }
