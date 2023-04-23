@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide
 import dex.alpha.dormdynamo.student.StudentLogin
 import dex.alpha.dormdynamo.student.StudentRegister
 import dex.alpha.dormdynamo.warden.WardenDashboard
+import dex.alpha.dormdynamo.warden.WardenLogin
 
 
 class GlobalLogin : AppCompatActivity() {
@@ -76,7 +77,7 @@ class GlobalLogin : AppCompatActivity() {
         // warden login
         wardenLoginBtn = findViewById(R.id.warden_login_button)
         wardenLoginBtn.setOnClickListener(){
-            val intent = Intent(this, WardenDashboard::class.java)
+            val intent = Intent(this, WardenLogin::class.java)
             startActivity(intent)
         }
 

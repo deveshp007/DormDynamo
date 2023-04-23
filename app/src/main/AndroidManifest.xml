@@ -12,6 +12,9 @@
         android:theme="@style/DormDynamo"
         tools:targetApi="31">
         <activity
+            android:name=".warden.WardenLogin"
+            android:exported="false" />
+        <activity
             android:name=".student.StudentDashboard"
             android:exported="false" />
         <activity
