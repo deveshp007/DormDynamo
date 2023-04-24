@@ -22,7 +22,7 @@ class WardenDashboard : AppCompatActivity() {
 
         checkDetail = findViewById(R.id.check_student_details)
         checkDetail.setOnClickListener(){
-            val intent = Intent(this, StudentSelectedDetails::class.java)
+            val intent = Intent(this, CheckStudentDetails::class.java)
             startActivity(intent)
         }
 
