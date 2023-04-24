@@ -8,14 +8,25 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import dex.alpha.dormdynamo.R
+import dex.alpha.dormdynamo.student.StudentSelectedDetails
 
 class WardenDashboard : AppCompatActivity() {
 
     lateinit var logoutBtn: ImageView
     private lateinit var back_Btn : ImageView
+    lateinit var checkDetail : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_warden_dashboard)
+
+
+        checkDetail = findViewById(R.id.check_student_details)
+        checkDetail.setOnClickListener(){
+            val intent = Intent(this, StudentSelectedDetails::class.java)
+            startActivity(intent)
+        }
+
+
 
         logoutBtn = findViewById(R.id.logout_button_warden)
         logoutBtn.setOnClickListener(){
