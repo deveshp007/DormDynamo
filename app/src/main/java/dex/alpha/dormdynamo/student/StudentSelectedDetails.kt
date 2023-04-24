@@ -88,6 +88,7 @@ class StudentSelectedDetails : AppCompatActivity() {
                 db.bookingDetailsDao().deleteAllBookingDetails()
             }
             res.text = ""
+            deleteBtn.isEnabled = false
         }
 
     }
