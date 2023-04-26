@@ -57,7 +57,7 @@ class GlobalLogin : AppCompatActivity() {
         shareAppTxt = findViewById(R.id.shareAppTxt)
         shareAppTxt.setOnClickListener(){
             val intent = Intent(Intent.ACTION_SEND)
-            val url = "https://github.com/deveshp007/DormDynamo/releases"
+            val url = "https://github.com/deveshp007/DormDynamo/releases/download/v1.0.1/DormDynamo.apk"
             intent.type = "text/plain"
             intent.putExtra(
                 Intent.EXTRA_TEXT,
