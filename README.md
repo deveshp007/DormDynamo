@@ -36,10 +36,12 @@ Dorm Dynamo is an android application designed to manage hostels in educational 
 To install the application, follow these steps:
 
 1. Clone the repository to your local machine using following Git command or download the ZIP file and extract it.
-   `git clone https://github.com/deveshp007/DormDynamo.git`
+   ```bash
+   git clone https://github.com/deveshp007/DormDynamo.git
+   ```
 2. Open the project in Android Studio.
-3. Create a new Firebase project and add the Android app to it. Follow the instructions in the Firebase console to generate a google-services.json file for your app.
-4. Add the google-services.json file to the app folder in the project. Make sure that the file is named exactly google-services.json and is located in the app/ directory.
+3. Create a new Firebase project and add the Android app to it. Follow the instructions in the Firebase console to generate a `google-services.json` file for your app.
+4. Add the `google-services.json` file to the app folder in the project. Make sure that the file is named exactly `google-services.json` and is located in the app/ directory.
 5. Build and run the app on an emulator or a physical device.
 
 ## Download
