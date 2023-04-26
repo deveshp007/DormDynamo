@@ -10,9 +10,9 @@ Dorm Dynamo is an android application designed to manage hostels in educational 
 
 ## Screenshots
 
-|          Dark Theme          |          Light Theme           |
-|:----------------------------:|:------------------------------:|
-| ![dark](video/darkTheme.mp4) | ![light](video/lightTheme.mp4) |
+|             Dark Theme             |             Light Theme             |
+|:----------------------------------:|:-----------------------------------:|
+| <iframe src="video/darkTheme.mp4"> | <iframe src="video/lightTheme.mp4"> |
 
 
 
